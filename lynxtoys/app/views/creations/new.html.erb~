@@ -1,0 +1,15 @@
+<%= render 'shared/topnav' %>
+<body style="background: #353535">
+<h2 class="style">Create a new creation</h3>
+<div class="container">
+  <div class="row footer">
+    <div class="col-md-8 contact_left">
+      <%= render 'form' %>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LciMwUTAAAAAPgH2iq2t4Omv03Gg8terp3KWNRj"></div>
+  </div>
+</div>
+</div>
+</body>
+
+<%= render 'shared/footnav' %>

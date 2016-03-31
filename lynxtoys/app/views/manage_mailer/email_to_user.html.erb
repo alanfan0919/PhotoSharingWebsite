@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+	<% if @action == "accepted"%>
+    <h1>Congratulations, your creation named <%= @creation.name %> has been accepted!</h1>
+    <p>
+	  We are very pleased that you can join us.
+	  Thanks for using Lynxtoys product.
+	  <br/>
+      You can use the following link to review your creation:
+      <%= @url %>/creations/<%= @creation.id %>/
+	  <br/>
+	  <br/>
+	  Thanks for your great work.
+      <br/><br/>
+	  Best regards,<br/><br/>
+	  Team Lynx
+    
+    </p>
+	<% elsif @action == "rejected"%>
+	<h1>Hi, we are sorry that your creation named <%= @creation.name %> has been rejected.</h1>
+    <p>
+	  Please keep creating and share with us again.
+	  <br/>
+	  Thanks for using our product.
+      <br/>
+	  <br/>
+	  Best regards,<br/>
+	  <br/>
+	  Team Lynx
+    
+    </p>
+	<% elsif @action == "created"%>
+	<h1>Hi, your creation named <%= @creation.name %> has been created!</h1>
+    <p>
+	  We are very pleased that you can join us.
+	  After your creation is reviewed, we will send you an email when it is published.
+	  Thanks for using Lynx.
+	  <br/>
+	  <br/>
+	  Thanks for using our product.
+      <br/>
+		<br/>
+	  Best regards,<br/>
+	 <br/>
+	  Team Lynx
+    
+    </p>
+	<%end%>
+  </body>
+</html>

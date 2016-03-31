@@ -1,0 +1,30 @@
+<h4><%= link_to 'Accept', creations_accept_path(@creation) %>&nbsp&nbsp&nbsp&nbsp<%= link_to 'Reject', creations_delete_path(@creation) %></h4>
+<h4><%= "Creation Name: "+@creation.name %></h4>
+<% count=0 %>
+<div class="grids_of_4 row">
+  <div class="col-md-3 images_1_of_4">
+    <div class="fancyDemo">
+      <a class="fancybox-thumbs" rel="gallery1" href=<%= @creation.cover.cover.url %> data-fancybox-group="gallery" title=""><img src=<%= @creation.cover.cover.url %> class="img-responsive" alt="" /></a>
+    </div>
+  </div>
+       
+  <% @creation.pictures.each do |p| %>
+    <% count=count+1 %>
+    <% if count%4==0 %>
+            <div class="grids_of_4 row">
+    <% end %>
+    <div class="col-md-3 images_1_of_4">
+      <div class="fancyDemo">
+        <a class="fancybox-thumbs" rel="gallery1" href=<%= p.image.url %> data-fancybox-group="gallery" title=""><img src=<%= p.image.url %> class="img-responsive" alt="" /></a >
+      </div>
+    </div>
+    <% if count%4==3 %>
+      </div>
+    <% end %>
+  <% end %>
+<% if count%4!=3 %>
+  </div>
+<% end %>
+
+
+
